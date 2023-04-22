@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:managment/Screens/alltxn.dart';
 import 'package:managment/data/listdata.dart';
 import 'package:managment/data/model/add_date.dart';
 import 'package:managment/data/utlity.dart';
@@ -50,14 +51,20 @@ class _HomeState extends State<Home> {
                                 color: Colors.black,
                               ),
                             ),
-                            Text(
-                              'See all',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 15,
-                                color: Colors.grey,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => Alltxn()));
+                              },
+                              child: Text(
+                                'See all',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 15,
+                                  color: Colors.grey,
+                                ),
                               ),
-                            ),
+                            )
                           ],
                         ),
                       ),

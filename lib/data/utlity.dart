@@ -31,7 +31,7 @@ int expenses() {
   var history2 = box.values.toList();
   List a = [0, 0];
   for (var i = 0; i < history2.length; i++) {
-    a.add(history2[i].IN == 'Income' ? 0 : int.parse(history2[i].amount) * -1);
+    a.add(history2[i].IN == 'Income' ? 0 : int.parse(history2[i].amount));
   }
   totals = a.reduce((value, element) => value + element);
   return totals;

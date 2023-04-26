@@ -18,6 +18,8 @@ class _Add_ScreenState extends State<Add_Screen> {
   FocusNode ex = FocusNode();
   final TextEditingController amount_c = TextEditingController();
   FocusNode amount_ = FocusNode();
+  final TextEditingController split_c = TextEditingController();
+  FocusNode split_ = FocusNode();
   final List<String> _item = [
     'food',
     "Transfer",
@@ -36,6 +38,9 @@ class _Add_ScreenState extends State<Add_Screen> {
       setState(() {});
     });
     amount_.addListener(() {
+      setState(() {});
+    });
+    split_.addListener(() {
       setState(() {});
     });
   }
@@ -68,15 +73,17 @@ class _Add_ScreenState extends State<Add_Screen> {
       width: 340,
       child: Column(
         children: [
-          SizedBox(height: 50),
+          SizedBox(height: 40),
           name(),
-          SizedBox(height: 30),
+          SizedBox(height: 20),
           explain(),
           SizedBox(height: 30),
           amount(),
           SizedBox(height: 30),
-          How(),
+          split(),
           SizedBox(height: 30),
+          How(),
+          SizedBox(height: 20),
           date_time(),
           Spacer(),
           save(),
@@ -89,8 +96,13 @@ class _Add_ScreenState extends State<Add_Screen> {
   GestureDetector save() {
     return GestureDetector(
       onTap: () {
+        int a = int.parse(amount_c.text);
+        int b = int.parse(split_c.text);
+        double fin = (a / b);
+        int finint = fin.round();
+
         var add = Add_data(
-            selctedItemi!, amount_c.text, date, expalin_C.text, selctedItem!);
+            selctedItemi!, finint.toString(), date, expalin_C.text, selctedItem!);
         box.add(add);
         Navigator.of(context).pop();
       },
@@ -211,6 +223,28 @@ class _Add_ScreenState extends State<Add_Screen> {
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
           labelText: 'amount',
+          labelStyle: TextStyle(fontSize: 17, color: Colors.grey.shade500),
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(width: 2, color: Color(0xffC5C5C5))),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(width: 2, color: Color(0xff368983))),
+        ),
+      ),
+    );
+  }
+
+  Padding split() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: TextField(
+        keyboardType: TextInputType.number,
+        focusNode: split_,
+        controller: split_c,
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+          labelText: 'split',
           labelStyle: TextStyle(fontSize: 17, color: Colors.grey.shade500),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),

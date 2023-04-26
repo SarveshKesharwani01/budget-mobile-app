@@ -14,6 +14,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  String plus='+';
+  String minus="-";
   var history;
   final box = Hive.box<Add_data>('data');
   final List<String> day = [
@@ -113,7 +115,8 @@ class _HomeState extends State<Home> {
         ),
       ),
       trailing: Text(
-        history.amount,
+        history.IN == 'Income' ?plus+
+        history.amount:minus+history.amount,
         style: TextStyle(
           fontWeight: FontWeight.w600,
           fontSize: 19,

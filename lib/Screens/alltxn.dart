@@ -165,7 +165,8 @@ class _AlltxnState extends State<Alltxn> {
         ),
       ),
       trailing: Text(
-        history.amount,
+        history.IN == 'Income' ?plus+
+        history.amount:minus+history.amount,
         style: TextStyle(
           fontWeight: FontWeight.w600,
           fontSize: 19,

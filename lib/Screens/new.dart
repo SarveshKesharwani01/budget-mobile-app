@@ -31,7 +31,7 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(onPressed: () {}, icon: const Icon(LineAwesomeIcons.angle_left)),
-        title: Text("profile", style: Theme.of(context).textTheme.headline4),
+        title: Text("Account", style: Theme.of(context).textTheme.headline4),
         actions: [IconButton(onPressed: () {}, icon: Icon(false ? LineAwesomeIcons.sun : LineAwesomeIcons.moon))],
       ),
       body: SingleChildScrollView(
@@ -69,8 +69,8 @@ class _ProfileState extends State<Profile> {
                 ],
               ),
               const SizedBox(height: 10),
-              Text("tProfileHeading", style: Theme.of(context).textTheme.headline4),
-              Text("tProfileSubHeading", style: Theme.of(context).textTheme.bodyText2),
+              Text("Sarvesh Kesharwani", style: Theme.of(context).textTheme.headline4),
+              Text("IIIT Pune", style: Theme.of(context).textTheme.bodyText2),
               const SizedBox(height: 20),
 
               /// -- BUTTON
@@ -80,7 +80,7 @@ class _ProfileState extends State<Profile> {
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.amberAccent, side: BorderSide.none, shape: const StadiumBorder()),
-                  child: const Text("tEditProfile", style: TextStyle(color: Colors.blueAccent)),
+                  child: const Text("Edit", style: TextStyle(color: Colors.blueAccent)),
                 ),
               ),
               const SizedBox(height: 30),
@@ -89,7 +89,7 @@ class _ProfileState extends State<Profile> {
 
               /// -- MENU
               ProfileMenuWidget(title: "Settings", icon: LineAwesomeIcons.cog, onPress: () {}),
-              ProfileMenuWidget(title: "Billing Details", icon: LineAwesomeIcons.wallet, onPress: () {}),
+              // ProfileMenuWidget(title: "Billing Details", icon: LineAwesomeIcons.wallet, onPress: () {}),
               ProfileMenuWidget(title: "User Management", icon: LineAwesomeIcons.user_check, onPress: () {}),
               const Divider(),
               const SizedBox(height: 10),

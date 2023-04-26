@@ -21,14 +21,14 @@ class _Add_ScreenState extends State<Add_Screen> {
   final TextEditingController split_c = TextEditingController();
   FocusNode split_ = FocusNode();
   final List<String> _item = [
-    'food',
+    'Food',
     "Transfer",
     "Transportation",
     "Education"
   ];
   final List<String> _itemei = [
-    'Income',
-    "Expand",
+    'Credit',
+    "Debit",
   ];
   @override
   void initState() {
@@ -101,8 +101,8 @@ class _Add_ScreenState extends State<Add_Screen> {
         double fin = (a / b);
         int finint = fin.round();
 
-        var add = Add_data(
-            selctedItemi!, finint.toString(), date, expalin_C.text, selctedItem!);
+        var add = Add_data(selctedItemi!, finint.toString(), date,
+            expalin_C.text, selctedItem!);
         box.add(add);
         Navigator.of(context).pop();
       },
@@ -222,7 +222,7 @@ class _Add_ScreenState extends State<Add_Screen> {
         controller: amount_c,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-          labelText: 'amount',
+          labelText: 'Amount',
           labelStyle: TextStyle(fontSize: 17, color: Colors.grey.shade500),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
@@ -244,7 +244,7 @@ class _Add_ScreenState extends State<Add_Screen> {
         controller: split_c,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-          labelText: 'split',
+          labelText: 'Split',
           labelStyle: TextStyle(fontSize: 17, color: Colors.grey.shade500),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
@@ -265,7 +265,7 @@ class _Add_ScreenState extends State<Add_Screen> {
         controller: expalin_C,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-          labelText: 'explain',
+          labelText: 'Description',
           labelStyle: TextStyle(fontSize: 17, color: Colors.grey.shade500),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),

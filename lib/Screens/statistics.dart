@@ -148,7 +148,7 @@ class _StatisticsState extends State<Statistics> {
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 19,
-                  color: a[index].IN == 'Income' ? Colors.green : Colors.red,
+                  color: a[index].IN == 'Credit' ? Colors.green : Colors.red,
                 ),
               ),
             );

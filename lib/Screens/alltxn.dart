@@ -14,8 +14,8 @@ class Alltxn extends StatefulWidget {
 }
 
 class _AlltxnState extends State<Alltxn> {
-  String plus='+';
-  String minus="-";
+  String plus = '+';
+  String minus = "-";
   List type = ['Time', 'Category'];
   List f = [today(), week(), month(), year()];
   List<Add_data> a = [];
@@ -40,56 +40,65 @@ class _AlltxnState extends State<Alltxn> {
               builder: (context, value, child) {
                 return CustomScrollView(
                   slivers: [
-                    SliverToBoxAdapter(child: SizedBox(height: 20,),),
-                    SliverToBoxAdapter(child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          ...List.generate(
-                            2,
-                                (index) {
-                              return GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    index_color = index;
-
-                                  });
-                                  if(index==1) {
-                                    Navigator.of(context)
-                                        .push(MaterialPageRoute(
-                                        builder: (context) => Category()));
-                                  }
-                                },
-                                child: Container(
-                                  height: 40,
-                                  width: 80,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: index_color == index
-                                        ? Color.fromARGB(255, 47, 125, 121)
-                                        : Colors.white,
-                                  ),
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    type[index],
-                                    style: TextStyle(
+                    SliverToBoxAdapter(
+                      child: SizedBox(
+                        height: 20,
+                      ),
+                    ),
+                    SliverToBoxAdapter(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            ...List.generate(
+                              2,
+                              (index) {
+                                return GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      index_color = index;
+                                    });
+                                    if (index == 1) {
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  Category()));
+                                    }
+                                  },
+                                  child: Container(
+                                    height: 40,
+                                    width: 80,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
                                       color: index_color == index
-                                          ? Colors.white
-                                          : Colors.black,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
+                                          ? Color.fromARGB(255, 47, 125, 121)
+                                          : Colors.white,
+                                    ),
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      type[index],
+                                      style: TextStyle(
+                                        color: index_color == index
+                                            ? Colors.white
+                                            : Colors.black,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                     ),
                                   ),
-                                ),
-                              );
-                            },
-                          ),
-                        ],
+                                );
+                              },
+                            ),
+                          ],
+                        ),
                       ),
-                    ),),
-                    SliverToBoxAdapter(child: SizedBox(height: 20,),),
-              
+                    ),
+                    SliverToBoxAdapter(
+                      child: SizedBox(
+                        height: 20,
+                      ),
+                    ),
                     SliverToBoxAdapter(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -165,17 +174,13 @@ class _AlltxnState extends State<Alltxn> {
         ),
       ),
       trailing: Text(
-        history.IN == 'Income' ?plus+
-        history.amount:minus+history.amount,
+        history.IN == 'Credit' ? plus + history.amount : minus + history.amount,
         style: TextStyle(
           fontWeight: FontWeight.w600,
           fontSize: 19,
-          color: history.IN == 'Income' ? Colors.green : Colors.red,
+          color: history.IN == 'Credit' ? Colors.green : Colors.red,
         ),
       ),
     );
   }
-
- 
-  
 }

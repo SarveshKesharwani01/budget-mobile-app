@@ -30,17 +30,20 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: () {}, icon: const Icon(LineAwesomeIcons.angle_left)),
+        leading: IconButton(
+            onPressed: () {}, icon: const Icon(LineAwesomeIcons.angle_left)),
         title: Text("Account", style: Theme.of(context).textTheme.headline4),
-        actions: [IconButton(onPressed: () {}, icon: Icon(false ? LineAwesomeIcons.sun : LineAwesomeIcons.moon))],
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: Icon(false ? LineAwesomeIcons.sun : LineAwesomeIcons.moon))
+        ],
       ),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(10),
           child: Column(
             children: [
-
-
               /// -- IMAGE
               Stack(
                 children: [
@@ -48,9 +51,10 @@ class _ProfileState extends State<Profile> {
                     width: 120,
                     height: 120,
                     child: ClipRRect(
-                        borderRadius: BorderRadius.circular(100), child: const Image(image: NetworkImage(
-                          "https://media.licdn.com/dms/image/C5603AQEeqMnvamHK1g/profile-displayphoto-shrink_800_800/0/1641790985939?e=2147483647&v=beta&t=IRX4QfQwWykPUsiyHYRrbFDinVEiPwvdwpUzj5HFKJU"
-                          ))),
+                        borderRadius: BorderRadius.circular(100),
+                        child: const Image(
+                            image: NetworkImage(
+                                "https://media.licdn.com/dms/image/C5603AQEeqMnvamHK1g/profile-displayphoto-shrink_800_800/0/1641790985939?e=2147483647&v=beta&t=IRX4QfQwWykPUsiyHYRrbFDinVEiPwvdwpUzj5HFKJU"))),
                   ),
                   Positioned(
                     bottom: 0,
@@ -58,7 +62,9 @@ class _ProfileState extends State<Profile> {
                     child: Container(
                       width: 35,
                       height: 35,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(100), color: Colors.white70),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100),
+                          color: Colors.white70),
                       child: const Icon(
                         LineAwesomeIcons.alternate_pencil,
                         color: Colors.black,
@@ -69,7 +75,8 @@ class _ProfileState extends State<Profile> {
                 ],
               ),
               const SizedBox(height: 10),
-              Text("Sarvesh Kesharwani", style: Theme.of(context).textTheme.headline4),
+              Text("Sarvesh Kesharwani",
+                  style: Theme.of(context).textTheme.headline4),
               Text("IIIT Pune", style: Theme.of(context).textTheme.bodyText2),
               const SizedBox(height: 20),
 
@@ -79,8 +86,11 @@ class _ProfileState extends State<Profile> {
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.amberAccent, side: BorderSide.none, shape: const StadiumBorder()),
-                  child: const Text("Edit", style: TextStyle(color: Colors.blueAccent)),
+                      backgroundColor: Colors.amberAccent,
+                      side: BorderSide.none,
+                      shape: const StadiumBorder()),
+                  child: const Text("Edit",
+                      style: TextStyle(color: Colors.blueAccent)),
                 ),
               ),
               const SizedBox(height: 30),
@@ -88,39 +98,47 @@ class _ProfileState extends State<Profile> {
               const SizedBox(height: 10),
 
               /// -- MENU
-              ProfileMenuWidget(title: "Settings", icon: LineAwesomeIcons.cog, onPress: () {}),
+              ProfileMenuWidget(
+                  title: "Settings",
+                  icon: LineAwesomeIcons.cog,
+                  onPress: () {}),
               // ProfileMenuWidget(title: "Billing Details", icon: LineAwesomeIcons.wallet, onPress: () {}),
-              ProfileMenuWidget(title: "User Management", icon: LineAwesomeIcons.user_check, onPress: () {}),
+              ProfileMenuWidget(
+                  title: "Accounts",
+                  icon: LineAwesomeIcons.user_check,
+                  onPress: () {}),
               const Divider(),
               const SizedBox(height: 10),
-              ProfileMenuWidget(title: "Information", icon: LineAwesomeIcons.info, onPress: () {}),
               ProfileMenuWidget(
-                  title: "Logout",
-                  icon: LineAwesomeIcons.alternate_sign_out,
-                  textColor: Colors.red,
-                  endIcon: false,
-                  onPress: () {
-                    
-                  },
-                  // onPress: () {
-                  //   Get.defaultDialog(
-                  //     title: "LOGOUT",
-                  //     titleStyle: const TextStyle(fontSize: 20),
-                  //     content: const Padding(
-                  //       padding: EdgeInsets.symmetric(vertical: 15.0),
-                  //       child: Text("Are you sure, you want to Logout?"),
-                  //     ),
-                  //     confirm: Expanded(
-                  //       child: ElevatedButton(
-                  //         onPressed: () => AuthenticationRepository.instance.logout(),
-                  //         style: ElevatedButton.styleFrom(backgroundColor: Colors.redAccent, side: BorderSide.none),
-                  //         child: const Text("Yes"),
-                  //       ),
-                  //     ),
-                  //     cancel: OutlinedButton(onPressed: () => Get.back(), child: const Text("No")),
-                  //   );
-                  // }),
-          )],
+                  title: "Information",
+                  icon: LineAwesomeIcons.info,
+                  onPress: () {}),
+              ProfileMenuWidget(
+                title: "Logout",
+                icon: LineAwesomeIcons.alternate_sign_out,
+                textColor: Colors.red,
+                endIcon: false,
+                onPress: () {},
+                // onPress: () {
+                //   Get.defaultDialog(
+                //     title: "LOGOUT",
+                //     titleStyle: const TextStyle(fontSize: 20),
+                //     content: const Padding(
+                //       padding: EdgeInsets.symmetric(vertical: 15.0),
+                //       child: Text("Are you sure, you want to Logout?"),
+                //     ),
+                //     confirm: Expanded(
+                //       child: ElevatedButton(
+                //         onPressed: () => AuthenticationRepository.instance.logout(),
+                //         style: ElevatedButton.styleFrom(backgroundColor: Colors.redAccent, side: BorderSide.none),
+                //         child: const Text("Yes"),
+                //       ),
+                //     ),
+                //     cancel: OutlinedButton(onPressed: () => Get.back(), child: const Text("No")),
+                //   );
+                // }),
+              )
+            ],
           ),
         ),
       ),
@@ -160,7 +178,7 @@ class _ProfileState extends State<Profile> {
   //       style: TextStyle(
   //         fontWeight: FontWeight.w600,
   //         fontSize: 19,
-  //         color: history.IN == 'Income' ? Colors.green : Colors.red,
+  //         color: history.IN == 'Credit' ? Colors.green : Colors.red,
   //       ),
   //     ),
   //   );
@@ -305,7 +323,7 @@ class _ProfileState extends State<Profile> {
   //                         ),
   //                         SizedBox(width: 7),
   //                         Text(
-  //                           'Income',
+  //                           'Credit',
   //                           style: TextStyle(
   //                             fontWeight: FontWeight.w500,
   //                             fontSize: 16,
@@ -346,7 +364,7 @@ class _ProfileState extends State<Profile> {
   //                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
   //                   children: [
   //                     Text(
-  //                       '\$ ${income()}',
+  //                       '\$ ${Credit()}',
   //                       style: TextStyle(
   //                         fontWeight: FontWeight.w600,
   //                         fontSize: 17,

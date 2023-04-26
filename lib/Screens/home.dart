@@ -14,8 +14,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  String plus='+';
-  String minus="-";
+  String plus = '+';
+  String minus = "-";
   var history;
   final box = Hive.box<Add_data>('data');
   final List<String> day = [
@@ -23,9 +23,9 @@ class _HomeState extends State<Home> {
     "Tuesday",
     "Wednesday",
     "Thursday",
-    'friday',
-    'saturday',
-    'sunday'
+    'Friday',
+    'Saturday',
+    'Sunday'
   ];
   @override
   Widget build(BuildContext context) {
@@ -115,12 +115,11 @@ class _HomeState extends State<Home> {
         ),
       ),
       trailing: Text(
-        history.IN == 'Income' ?plus+
-        history.amount:minus+history.amount,
+        history.IN == 'Credit' ? plus + history.amount : minus + history.amount,
         style: TextStyle(
           fontWeight: FontWeight.w600,
           fontSize: 19,
-          color: history.IN == 'Income' ? Colors.green : Colors.red,
+          color: history.IN == 'Credit' ? Colors.green : Colors.red,
         ),
       ),
     );
@@ -265,7 +264,7 @@ class _HomeState extends State<Home> {
                           ),
                           SizedBox(width: 7),
                           Text(
-                            'Income',
+                            'Credit',
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 16,
@@ -306,7 +305,7 @@ class _HomeState extends State<Home> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '\₹ ${income()}',
+                        '\₹ ${Credit()}',
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 17,

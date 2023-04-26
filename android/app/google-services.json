@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "415370018046",
+    "project_id": "budgey-f9154",
+    "storage_bucket": "budgey-f9154.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415370018046:android:c1edd3d9e461a9ba7b39af",
+        "android_client_info": {
+          "package_name": "com.example.managment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "415370018046-f5frkmsgq1l8l741s0sija8bahu6ng40.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaSbZSg6-DwqCgZXKdnaxD1iGzEtabWEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "415370018046-f5frkmsgq1l8l741s0sija8bahu6ng40.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "415370018046-btduksatahch3pd6mnc39keekggcvups.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.managment"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
